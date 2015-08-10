@@ -1,0 +1,25 @@
+{
+  "name": "node-fun",
+  "version": "1.0.0",
+  "description": "We're having fun with node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrendanDayley/node-fun.git"
+  },
+  "author": "Brendan Dayley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrendanDayley/node-fun/issues"
+  },
+  "homepage": "https://github.com/BrendanDayley/node-fun#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3"
+  }
+}
