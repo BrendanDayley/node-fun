@@ -16,9 +16,14 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var request = require('request');
 var twilio = require('twilio')
+var Firebase = require('firebase');
+
+// Get a database reference to our posts
+var ref = new Firebase("https://brendan-textsupport.firebaseio.com/web/saving-data/fireblog/posts");
+
 
 var app = express();
-var port =  process.argv[2] || 8181;
+var port =  process.argv[2] || 8080;
 var client = twilio(accountSid, authToken);
 
 
@@ -46,27 +51,27 @@ app.get('/api/message', function(req, res){
 });
 
 app.post('/api/send_text_message', function (req, res){
-	console.log(req.body.message);
+	console.log(req.body);
 	
 	client.messages.create({
 	//to: "2089641796",
 	to: "8013617836",
 	from: "+18014712323",
-	mediaUrl: req.body.message,   
+	body: req.body.message,   
 }, function(err, message) { 
 	if(err){
 		console.log('aahhhh!!: ', err);
 	}
-	console.log(message.sid); 
+	//console.log(message.sid); 
 })
 
 	res.json(req.body.message);
 });
 
-app.post('/api/send_text_message', function(req, res){
-	console.log(req.body.message);
-	req.post('https://' + accountSid + ':' + authToken + '@api.twilio.com/2010-04-01/Accounts/')
-})
+// app.post('/api/send_text_message', function(req, res){
+// 	console.log(req.body.message);
+// 	req.post('https://' + accountSid + ':' + authToken + '@api.twilio.com/2010-04-01/Accounts/')
+// })
 
 
 
