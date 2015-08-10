@@ -8,18 +8,45 @@
 	<link rel="stylesheet" href="">
 </head>
 
-<body>
-	<h1>welcome</h1>
-	<h2>to TextSupport!</h2>
-	<div class='center'>
-		<p>If you require assistance, please text this phone number:</p>
-		<h2>+1-(801)-471-2323</h2>
+<body ng-app='TextSupport' controller='mainController.js'>
+	<div class='content'>
+		<div>
+			<header class='topDown'>
+				<div>
+					<h1 class='center'>TextSupport!</h1>
+				</div>
+				<div class='right'>
+					<button class='nav btn btn-sm btn-primary' ui-sref='home'>Home</button>
+					<button class='nav btn btn-sm btn-primary' ui-sref='support'>support</button>
+
+				</div>
+			</header>
+		</div>
+
+		<br>
+		<div class='container' ui-view></div>
+		<!--		<img src="images/symphony.png" />-->
 	</div>
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
+	<!--	FireBase		-->
 	<script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.js"></script>
+	
+	<!--			App			-->
+	<script src="scripts/app.js"></script>
+
+	<!--			Controllers		-->
+	<script src="scripts/controllers/homeController.js"></script>
+	<script src="scripts/controllers/mainController.js"></script>
+	<script src="scripts/controllers/supportController.js"></script>
+
+	<!--			services			-->
+	<script src="scripts/services/dataService"></script>
+	<script src=""></script>
 </body>
 
 </html>
